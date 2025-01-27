@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://kwcuo8tvgvgu"]
+[gd_scene load_steps=17 format=3 uid="uid://kwcuo8tvgvgu"]
 
 [ext_resource type="PackedScene" uid="uid://bhhd51f546ik8" path="res://scenes/player.tscn" id="1_aj0tx"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_f2jko"]
+[ext_resource type="Script" path="res://scripts/spawn_node.gd" id="1_fdopc"]
 [ext_resource type="Texture2D" uid="uid://dc0wfav751gke" path="res://assets/sprites/world_tileset.png" id="2_efpb8"]
 [ext_resource type="PackedScene" uid="uid://diyvietiapt13" path="res://scenes/platform.tscn" id="3_s8pgg"]
 [ext_resource type="PackedScene" uid="uid://dt6ufyf5xb5fj" path="res://scenes/coin.tscn" id="4_fu7vg"]
@@ -217,6 +218,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_fdopc")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
