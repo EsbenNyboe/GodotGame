@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bufbxw0drytju"]
+[gd_scene load_steps=17 format=3 uid="uid://bufbxw0drytju"]
 
+[ext_resource type="Script" path="res://scripts/random_impulse.gd" id="1_2gaii"]
 [ext_resource type="Texture2D" uid="uid://1jehuax48rnn" path="res://assets/sprites/coin.png" id="1_77qdp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6opmi"]
@@ -99,6 +100,7 @@ animations = [{
 
 [node name="Spawnable" type="RigidBody2D"]
 collision_layer = 4
+script = ExtResource("1_2gaii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6opmi")
@@ -106,4 +108,4 @@ shape = SubResource("CircleShape2D_6opmi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a7s2t")
 autoplay = "default"
-frame_progress = 0.89143
+frame_progress = 0.890148

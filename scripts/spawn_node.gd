@@ -10,6 +10,6 @@ func _physics_process(delta: float) -> void:
 
 func inst(pos):
 	var instance = mynode.instantiate()
-	pos.x += randf() * RANDOM_RANGE - RANDOM_RANGE * 0.5
+	#pos.x += randf() * RANDOM_RANGE - RANDOM_RANGE * 0.5
 	instance.position = pos
 	add_child(instance)
