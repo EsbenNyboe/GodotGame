@@ -97,7 +97,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Spawnable" type="RigidBody2D"]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -106,4 +106,4 @@ shape = SubResource("CircleShape2D_6opmi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a7s2t")
 autoplay = "default"
-frame_progress = 0.526308
+frame_progress = 0.89143
