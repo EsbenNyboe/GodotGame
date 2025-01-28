@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="JuicySoundResource" load_steps=3 format=3 uid="uid://yiawxqyepy17"]
+
+[ext_resource type="AudioStream" uid="uid://c03eq1y7n2hav" path="res://JuicySounds/example_sound.wav" id="1_1c6rg"]
+[ext_resource type="Script" path="res://JuicySounds/JuicySoundResource.gd" id="1_52sjv"]
+
+[resource]
+script = ExtResource("1_52sjv")
+audio_stream = ExtResource("1_1c6rg")

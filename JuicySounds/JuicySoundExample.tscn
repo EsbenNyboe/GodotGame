@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d32iku1voeeld"]
+
+[ext_resource type="Script" path="res://JuicySounds/JuicySoundExample.gd" id="1_nf3le"]
+[ext_resource type="Script" path="res://JuicySounds/JuicySoundPlayer.gd" id="2_x1nrt"]
+[ext_resource type="Resource" uid="uid://yiawxqyepy17" path="res://JuicySounds/example_sound.tres" id="3_hwxwk"]
+
+[node name="JuicySoundExample" type="Node2D"]
+script = ExtResource("1_nf3le")
+
+[node name="JuicySoundPlayer" type="Node" parent="."]
+script = ExtResource("2_x1nrt")
+audio_config = ExtResource("3_hwxwk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="JuicySoundPlayer"]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
