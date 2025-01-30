@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfil3mhqe4f5h"]
+
+[ext_resource type="Script" path="res://scripts/interactive_tile.gd" id="1_bs8sm"]
+[ext_resource type="Texture2D" uid="uid://dc0wfav751gke" path="res://assets/sprites/world_tileset.png" id="1_g57uk"]
+[ext_resource type="Script" path="res://scripts/hoverable.gd" id="2_f0j12"]
+[ext_resource type="Script" path="res://scripts/grabbable.gd" id="3_5atv3"]
+[ext_resource type="Script" path="res://scripts/highlightable.gd" id="3_buw0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfce3"]
+size = Vector2(16, 16)
+
+[node name="InteractiveTile" type="Node2D"]
+script = ExtResource("1_bs8sm")
+
+[node name="Hoverable" type="Node2D" parent="."]
+script = ExtResource("2_f0j12")
+
+[node name="Grabbable" type="Node2D" parent="."]
+script = ExtResource("3_5atv3")
+
+[node name="Highlightable" type="Sprite2D" parent="."]
+script = ExtResource("3_buw0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="Highlightable"]
+texture = ExtResource("1_g57uk")
+region_enabled = true
+region_rect = Rect2(0.269112, 31.567, 15.8276, 16.8168)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bfce3")
