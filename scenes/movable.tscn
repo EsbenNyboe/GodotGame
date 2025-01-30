@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfil3mhqe4f5h"]
+[gd_scene load_steps=4 format=3 uid="uid://dfil3mhqe4f5h"]
 
+[ext_resource type="Script" path="res://scripts/movable.gd" id="1_bs8sm"]
 [ext_resource type="Texture2D" uid="uid://dc0wfav751gke" path="res://assets/sprites/world_tileset.png" id="1_g57uk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfce3"]
 size = Vector2(16, 16)
 
 [node name="Movable" type="Node2D"]
+script = ExtResource("1_bs8sm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_g57uk")
