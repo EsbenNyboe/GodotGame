@@ -5,7 +5,7 @@ var mynode = preload("res://scenes/spawnable.tscn")
 const RANDOM_RANGE = 5
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("mouse_button"):
+	if Input.is_action_pressed("mouse_button_right"):
 		inst(get_global_mouse_position())
 
 func inst(pos):
