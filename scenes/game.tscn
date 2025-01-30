@@ -325,5 +325,5 @@ theme_override_fonts/font = ExtResource("7_vdtgx")
 theme_override_font_sizes/font_size = 8
 text = "This way -->"
 
-[node name="Movable" parent="." instance=ExtResource("11_6pm1n")]
-position = Vector2(-30, 10)
+[node name="InteractiveTile" parent="." instance=ExtResource("11_6pm1n")]
+position = Vector2(-32, 48)

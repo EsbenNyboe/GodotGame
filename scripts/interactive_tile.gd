@@ -1,8 +1,10 @@
 extends Node2D
 
+const TILE_SIZE = 16
+
 @onready var hoverable: Hoverable = $Hoverable
 @onready var grabbable: Grabbable = $Grabbable
-@onready var highlightable: Highlightable = $Highlightable
+@onready var highlightable: Highlightable = $Offset/Highlightable
 
 func _physics_process(delta: float) -> void:
 	_try_release()
@@ -28,4 +30,5 @@ func _try_release() -> void:
 
 func _try_move(mouse_position: Vector2) -> void:
 	if Input.is_action_pressed("mouse_button_left"):
-		position = grabbable.get_offset_position(mouse_position)
+		var raw_position = grabbable.get_offset_position(mouse_position)
+		position = raw_position.snapped(Vector2.ONE * TILE_SIZE)

@@ -18,15 +18,18 @@ script = ExtResource("2_f0j12")
 [node name="Grabbable" type="Node2D" parent="."]
 script = ExtResource("3_5atv3")
 
-[node name="Highlightable" type="Sprite2D" parent="."]
+[node name="Offset" type="Node2D" parent="."]
+position = Vector2(8, -8)
+
+[node name="Highlightable" type="Sprite2D" parent="Offset"]
 script = ExtResource("3_buw0f")
 
-[node name="Sprite2D" type="Sprite2D" parent="Highlightable"]
+[node name="Sprite2D" type="Sprite2D" parent="Offset/Highlightable"]
 texture = ExtResource("1_g57uk")
 region_enabled = true
-region_rect = Rect2(0.269112, 31.567, 15.8276, 16.8168)
+region_rect = Rect2(0, 32, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Offset"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offset/Area2D"]
 shape = SubResource("RectangleShape2D_bfce3")
