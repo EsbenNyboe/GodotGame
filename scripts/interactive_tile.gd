@@ -2,16 +2,20 @@ extends Node2D
 
 @onready var hoverable: Hoverable = $Hoverable
 @onready var grabbable: Grabbable = $Grabbable
+@onready var highlightable: Highlightable = $Highlightable
 
 func _physics_process(delta: float) -> void:
 	_try_release()
-	if !hoverable.is_hovered(get_global_mouse_position(), position):
+	var is_hovered = hoverable.is_hovered(get_global_mouse_position(), position)
+	highlightable.set_highlight(is_hovered)
+	if !is_hovered and !grabbable.is_grabbed:
 		return
 	
 	var mouse_position = get_global_mouse_position()
 	_try_grab(mouse_position)
 	
 	if grabbable.is_grabbed:
+		highlightable.set_highlight(false)
 		_try_move(mouse_position)
 
 func _try_grab(mouse_position: Vector2) -> void:

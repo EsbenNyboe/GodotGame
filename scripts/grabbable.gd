@@ -1,5 +1,4 @@
 class_name Grabbable
-
 extends Node
 
 var is_grabbed = false
