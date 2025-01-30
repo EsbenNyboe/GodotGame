@@ -5,10 +5,12 @@ const TILE_SIZE = 16
 @onready var hoverable: Hoverable = $Hoverable
 @onready var grabbable: Grabbable = $Grabbable
 @onready var highlightable: Highlightable = $Offset/Highlightable
+@onready var offset: Node2D = $Offset
 
 func _physics_process(delta: float) -> void:
 	_try_release()
-	var is_hovered = hoverable.is_hovered(get_global_mouse_position(), position)
+	var global_offset_position = position + offset.position
+	var is_hovered = hoverable.is_hovered(get_global_mouse_position(), global_offset_position)
 	highlightable.set_highlight(is_hovered)
 	if !is_hovered and !grabbable.is_grabbed:
 		return
