@@ -17,3 +17,5 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("mouse_button_left") and is_hovering:
 		var new_instance = INTERACTIVE_TILE.instantiate()
 		get_parent().add_child(new_instance)
+		new_instance.position = position
+		new_instance._try_grab(mouse_position)
