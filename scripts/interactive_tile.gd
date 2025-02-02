@@ -12,8 +12,10 @@ func _physics_process(delta: float) -> void:
 	var is_hovered = hoverable.is_hovered(get_global_mouse_position(), position, offset.position)
 	if _try_delete(is_hovered):
 		return
+	
+	var is_mouse_pressing = Input.is_action_pressed("mouse_button_left")
 
-	highlightable.set_highlight(is_hovered)
+	highlightable.set_highlight(is_hovered and !is_mouse_pressing)
 	if !is_hovered and !grabbable.is_grabbed:
 		return
 	
@@ -21,7 +23,6 @@ func _physics_process(delta: float) -> void:
 	_try_grab(mouse_position)
 	
 	if grabbable.is_grabbed:
-		highlightable.set_highlight(false)
 		_try_move(mouse_position)
 
 func _try_grab(mouse_position: Vector2) -> void:

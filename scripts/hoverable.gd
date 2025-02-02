@@ -2,7 +2,7 @@ class_name Hoverable
 extends Node
 
 # TODO: Find a way to check its size
-const SIZE = 10
+const SIZE = 8
 
 func is_hovered(mouse_position: Vector2, position: Vector2, offset_position: Vector2) -> bool:
 	position += offset_position
