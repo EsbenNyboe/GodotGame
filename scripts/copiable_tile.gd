@@ -2,6 +2,7 @@ extends Node2D
 
 # TODO: Get global constant instead
 const TILE_SIZE = 16
+const INTERACTIVE_TILE = preload("res://scenes/tiles/interactive_tile.tscn")
 
 @onready var hoverable: Hoverable = $Hoverable
 @onready var highlightable: Highlightable = $Offset/Highlightable
@@ -14,4 +15,5 @@ func _physics_process(delta: float) -> void:
 	highlightable.set_highlight(is_hovering and !mouse_pressed)
 	
 	if Input.is_action_just_pressed("mouse_button_left") and is_hovering:
-		print("copy now")
+		var new_instance = INTERACTIVE_TILE.instantiate()
+		get_parent().add_child(new_instance)
