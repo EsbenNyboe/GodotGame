@@ -10,6 +10,9 @@ const TILE_SIZE = 16
 func _physics_process(delta: float) -> void:
 	_try_release()
 	var is_hovered = hoverable.is_hovered(get_global_mouse_position(), position, offset.position)
+	if _try_delete(is_hovered):
+		return
+
 	highlightable.set_highlight(is_hovered)
 	if !is_hovered and !grabbable.is_grabbed:
 		return
@@ -33,3 +36,9 @@ func _try_move(mouse_position: Vector2) -> void:
 	if Input.is_action_pressed("mouse_button_left"):
 		var raw_position = grabbable.get_offset_position(mouse_position)
 		position = raw_position.snapped(Vector2.ONE * TILE_SIZE)
+
+func _try_delete(is_hovered: bool) -> bool:
+	if is_hovered and Input.is_action_just_pressed("delete"):
+		queue_free()
+		return true
+	return false
