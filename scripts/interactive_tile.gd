@@ -9,8 +9,7 @@ const TILE_SIZE = 16
 
 func _physics_process(delta: float) -> void:
 	_try_release()
-	var global_offset_position = position + offset.position
-	var is_hovered = hoverable.is_hovered(get_global_mouse_position(), global_offset_position)
+	var is_hovered = hoverable.is_hovered(get_global_mouse_position(), position, offset.position)
 	highlightable.set_highlight(is_hovered)
 	if !is_hovered and !grabbable.is_grabbed:
 		return

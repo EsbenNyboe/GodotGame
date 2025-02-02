@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dise3xixkyebd"]
+
+[ext_resource type="Script" path="res://scripts/copiable_tile.gd" id="1_02tk5"]
+[ext_resource type="Script" path="res://scripts/hoverable.gd" id="1_j3xue"]
+[ext_resource type="Script" path="res://scripts/highlightable.gd" id="2_pcs2v"]
+[ext_resource type="Texture2D" uid="uid://dc0wfav751gke" path="res://assets/sprites/world_tileset.png" id="3_2mimg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xscjw"]
+
+[node name="CopiableTile" type="Node2D"]
+script = ExtResource("1_02tk5")
+
+[node name="Hoverable" type="Node" parent="."]
+script = ExtResource("1_j3xue")
+
+[node name="Offset" type="Node2D" parent="."]
+position = Vector2(8, -8)
+
+[node name="Area2D" type="Area2D" parent="Offset"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offset/Area2D"]
+shape = SubResource("RectangleShape2D_xscjw")
+
+[node name="Highlightable" type="Node2D" parent="Offset"]
+script = ExtResource("2_pcs2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Offset/Highlightable"]
+texture = ExtResource("3_2mimg")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[connection signal="mouse_entered" from="Offset/Area2D" to="." method="_on_area_2d_mouse_entered"]

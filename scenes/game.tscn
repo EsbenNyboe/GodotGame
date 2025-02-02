@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://kwcuo8tvgvgu"]
+[gd_scene load_steps=19 format=3 uid="uid://kwcuo8tvgvgu"]
 
 [ext_resource type="PackedScene" uid="uid://bhhd51f546ik8" path="res://scenes/player.tscn" id="1_aj0tx"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_f2jko"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://cqjmh7com0o67" path="res://assets/fonts/PixelOperator8.ttf" id="7_vdtgx"]
 [ext_resource type="FontFile" uid="uid://b8dpry0vlk17d" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_lob2p"]
 [ext_resource type="PackedScene" uid="uid://dfil3mhqe4f5h" path="res://scenes/tiles/interactive_tile.tscn" id="11_6pm1n"]
+[ext_resource type="PackedScene" uid="uid://dise3xixkyebd" path="res://scenes/tiles/copiable_tile.tscn" id="12_716pv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr7xc"]
 texture = ExtResource("2_efpb8")
@@ -326,4 +327,6 @@ theme_override_font_sizes/font_size = 8
 text = "This way -->"
 
 [node name="InteractiveTile" parent="." instance=ExtResource("11_6pm1n")]
-position = Vector2(-32, 48)
+
+[node name="CopiableTile" parent="." instance=ExtResource("12_716pv")]
+position = Vector2(-48, 16)

@@ -21,7 +21,7 @@ script = ExtResource("3_5atv3")
 [node name="Offset" type="Node2D" parent="."]
 position = Vector2(8, -8)
 
-[node name="Highlightable" type="Sprite2D" parent="Offset"]
+[node name="Highlightable" type="Node2D" parent="Offset"]
 script = ExtResource("3_buw0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Offset/Highlightable"]
